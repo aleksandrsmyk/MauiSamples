@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShellSample.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShellSample"
+    Shell.FlyoutBehavior="Flyout">
+
+    <Shell.FlyoutHeader>
+        <ContentView
+            HeightRequest="100"
+            BackgroundColor="LightGrey">
+            <Label Text="Custom FlyoutHeader"/>
+        </ContentView>
+    </Shell.FlyoutHeader>
+
+    <MenuItem Text="Menu1"/>
+
+    <FlyoutItem
+        Title="FlyoutItem1">
+        <ShellContent
+                Title="FlyoutItem1_Content1"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="FlyoutItem1_Content1" />
+        <ShellContent
+                    Title="FlyoutItem2_Content2"
+                    ContentTemplate="{DataTemplate local:MainPage}"
+                    Route="FlyoutItem2_Content2" />
+    </FlyoutItem>
+
+    <FlyoutItem
+        Title="FlyoutItem2">
+        <ShellContent
+                Title="FlyoutItem2_Home"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="FlyoutItem2_Home" />
+    </FlyoutItem>
+
+    <ShellContent
+        Title="ShellContent_Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <FlyoutItem
+        Title="FlyoutItem3">
+        <Tab Title="Tab1">
+            <ShellContent
+                Title="FlyoutItem3_Tab1"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="FlyoutItem3_Tab1" />
+        </Tab>
+        <Tab Title="Tab2">
+            <ShellContent
+                Title="FlyoutItem3_Tab2"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="FlyoutItem3_Tab2" />
+        </Tab>
+    </FlyoutItem>
+
+    <MenuItem Text="Menu2"/>
+
+    <Shell.FlyoutFooter>
+        <ContentView
+            HeightRequest="100"
+            BackgroundColor="LightBlue">
+            <Label Text="Custom FlyoutFooter"/>
+        </ContentView>
+    </Shell.FlyoutFooter>
+
+</Shell>
